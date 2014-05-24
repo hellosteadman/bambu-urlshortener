@@ -16,7 +16,7 @@ class Migration(SchemaMigration):
             ('visits', self.gf('django.db.models.fields.PositiveIntegerField')(default=0)),
             ('last_visited', self.gf('django.db.models.fields.DateTimeField')(null=True, blank=True)),
         ))
-        db.send_create_signal(u'bambu_urlshortener', ['ShortURL'])
+        db.send_create_signal('bambu_urlshortener', ['ShortURL'])
 
 
     def backwards(self, orm):
@@ -25,7 +25,7 @@ class Migration(SchemaMigration):
 
 
     models = {
-        u'bambu_urlshortener.shorturl': {
+        'bambu_urlshortener.shorturl': {
             'Meta': {'object_name': 'ShortURL', 'db_table': "'urlshortener_shorturl'"},
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'last_visited': ('django.db.models.fields.DateTimeField', [], {'null': 'True', 'blank': 'True'}),

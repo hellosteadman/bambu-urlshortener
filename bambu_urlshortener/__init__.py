@@ -2,6 +2,7 @@ from django.conf import settings
 from django.utils.importlib import import_module
 
 __version__ = '2.0'
+default_app_config = 'bambu_urlshortner.apps.URLShortenerConfig'
 URL_LENGTH = getattr(settings, 'SHORTURL_LENGTH', 7)
 
 def shorten(url):

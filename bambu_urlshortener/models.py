@@ -2,10 +2,6 @@ from django.db import models
 from bambu_urlshortener import URL_LENGTH
 import random, string
 
-class CustomTitleString(str):
-    def title(self):
-        return str(self[6:]).title()
-
 class ShortURL(models.Model):
     url = models.URLField(u'URL', max_length = 255, unique = True)
     slug = models.CharField(max_length = URL_LENGTH, unique = True, editable = False)
@@ -30,4 +26,3 @@ class ShortURL(models.Model):
     class Meta:
         verbose_name = 'short URL'
         db_table = 'urlshortener_shorturl'
-        app_label = CustomTitleString('bambu_urlshortener')
